@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Delicious Bites</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background-color: #ff9966;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #header-img {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    nav li {
+      margin: 0 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffebcc;
+    }
+
+    /* Main content */
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      color: #ff6600;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Menu cards */
+    .menu-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    article {
+      background-color: #fff3e0;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    article:hover {
+      transform: translateY(-5px);
+    }
+
+    article img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      color: #cc3300;
+    }
+
+    p {
+      font-size: 0.95em;
+    }
+
+    em {
+      font-weight: bold;
+    }
+
+    /* Form */
+    form {
+      background-color: #fff3e0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #cc3300;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #ff9966;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Food_icon.svg/1024px-Food_icon.svg.png" alt="Restaurant Logo" id="header-img">
+    <h1>Delicious Bites</h1>
+    <nav>
+      <ul>
+        <li><a href="#menu">#Menu</a></li>
+        <li><a href="#order-form">#Order-Form</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <!-- Menu Section -->
+    <section id="menu">
+      <h2>Menu</h2>
+      <div class="menu-container">
+        <article>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg" alt="Classic Burger">
+          <h3>Classic Burger</h3>
+          <p>A juicy beef patty with fresh lettuce, tomato, and cheese. <em>$8.99</em></p>
+        </article>
+
+        <article>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Pasta_Platting.jpg" alt="Creamy Pasta">
+          <h3>Creamy Pasta</h3>
+          <p>Fettuccine pasta in a rich alfredo sauce with parmesan. <em>$12.50</em></p>
+        </article>
+
+        <article>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Chocolate_cake_slice.jpg" alt="Chocolate Cake">
+          <h3>Chocolate Cake</h3>
+          <p>Decadent chocolate cake served with whipped cream. <em>$6.00</em></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order-form">
+      <h2>Place Your Order</h2>
+      <form>
+        <label for="burger">Classic Burger:</label>
+        <input type="number" id="burger" name="burger" min="0">
+
+        <label for="pasta">Creamy Pasta:</label>
+        <input type="number" id="pasta" name="pasta" min="0">
+
+        <label for="cake">Chocolate Cake:</label>
+        <input type="number" id="cake" name="cake" min="0">
+
+        <label>Sides & Add-ons:</label>
+        <input type="checkbox" id="fries" name="sides" value="fries">
+        <label for="fries">Fries</label>
+
+        <input type="checkbox" id="salad" name="sides" value="salad">
+        <label for="salad">Salad</label>
+
+        <input type="checkbox" id="drink" name="sides" value="drink">
+        <label for="drink">Soft Drink</label>
+
+        <label for="special">Special Requests:</label>
+        <textarea id="special" name="special" placeholder="Any allergies or special instructions?"></textarea>
+
+        <input type="submit" value="Go To Checkout">
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with love by Wergiley Oliveira</p>
+  </footer>
+
+</body>
+</html>
